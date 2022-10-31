@@ -9,7 +9,6 @@ import PIL.Image as Image
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 images, labels = (x_train[0:1000].reshape(1000, 28 * 28) / 255, y_train[0:1000]) # 0~255缩放到0~1
-
 one_hot_labels = np.zeros((len(labels), 10))
 for i, l in enumerate(labels):
     one_hot_labels[i][l] = 1
