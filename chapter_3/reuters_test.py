@@ -1,9 +1,11 @@
+import sys
+
 from keras.datasets import reuters
 import numpy as np
 # load data
 (train_datas, train_labels), (test_datas, test_labels) = reuters.load_data(num_words=10000)
 
-# data processing % encoding data
+# data processing & encoding data
 def vectorize_sequences(sequences, dimension=10000):
     results = np.zeros((len(sequences), dimension))
     for i, sequence in enumerate(sequences):
@@ -17,7 +19,7 @@ def to_one_hot(labels, dimension=46):
     results = np.zeros((len(labels), dimension))
     for i, label in enumerate(labels):
         results[i, label] = 1.
-        return results
+    return results
 
 one_hot_train_labels = to_one_hot(train_labels)
 one_hot_test_labels = to_one_hot(test_labels)
