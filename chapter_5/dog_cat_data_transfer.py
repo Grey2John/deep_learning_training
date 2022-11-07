@@ -9,14 +9,12 @@ part_data_path = os.path.join(dataset_path, "part_data_path")
 os.mkdir(part_data_path)
 dog_cat = ['dog', 'cat']
 for animal in dog_cat:
-    train_dir = os.path.join(part_data_path, animal, 'train')
-    verify_dir = os.path.join(part_data_path, animal, 'verify')
-    test_dir = os.path.join(part_data_path, animal, 'test')
+    train_dir = os.path.join(part_data_path, 'train', animal)
+    verify_dir = os.path.join(part_data_path, 'verify', animal)
+    test_dir = os.path.join(part_data_path, 'test', animal)
     os.system("mkdir -p {}".format(train_dir))
-    print(verify_dir)
-    os.mkdir(verify_dir)
-    print(test_dir)
-    os.mkdir(test_dir)
+    os.system("mkdir -p {}".format(verify_dir))
+    os.system("mkdir -p {}".format(test_dir))
     # training
     frame = ["{}.{}.jpg".format(animal, i) for i in range(1000)]
     for f in frame:
