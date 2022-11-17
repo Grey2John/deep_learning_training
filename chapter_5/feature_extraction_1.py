@@ -1,4 +1,6 @@
 # 5.3 fast feature extraction without data enhancement
+import sys
+
 from keras.applications import VGG16
 
 convnet = VGG16(weights='imagenet',

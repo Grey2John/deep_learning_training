@@ -1,3 +1,4 @@
+# dog-cat数据进行抽样拆分
 import os, shutil
 
 dataset_path = '/home/zlh/data/dogs_vs_cats'
